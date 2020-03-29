@@ -1,0 +1,22 @@
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Styling */
+html {
+  font-size: 10px;
+}
+
+body {
+  background: #e5e5e5;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+}
+
+h1 {
+  margin: 5% auto;
+  text-align: center;
+}
