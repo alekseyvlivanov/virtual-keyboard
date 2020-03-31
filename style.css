@@ -16,7 +16,59 @@ body {
   line-height: 2.6rem;
 }
 
-h1 {
-  margin: 5% auto;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 1020px;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+.title {
+  margin-top: 5%;
   text-align: center;
+}
+
+.text {
+  height: 20vh;
+  width: 100%;
+  margin-top: 3%;
+  resize: none;
+}
+
+.info {
+  margin-top: 2%;
+}
+
+.keyboard {
+  width: 100%;
+  margin-top: 2%;
+  user-select: none;
+}
+
+.keyboard__row {
+  display: flex;
+  justify-content: center;
+}
+
+.keyboard__key {
+  height: 50px;
+  width: 50px;
+  margin: 3px;
+  border: 1px solid #b4b4b4;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.keyboard__key:active {
+  background: rgba(48, 48, 48, 0.3);
+}
+
+.keyboard__key_wide {
+  width: 150px;
+}
+
+.keyboard__key_extra-wide {
+  width: 300px;
 }
