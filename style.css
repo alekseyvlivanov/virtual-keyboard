@@ -1,3 +1,5 @@
+/*  */
+
 /* Reset CSS */
 * {
   box-sizing: border-box;
@@ -19,41 +21,45 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  max-width: 1020px;
-  min-width: 300px;
+  max-width: 900px;
+  min-width: 750px;
   margin: 0 auto;
 }
 
 .title {
-  margin-top: 5%;
+  margin: 2%;
   text-align: center;
 }
 
 .text {
-  height: 20vh;
+  height: 25vh;
   width: 100%;
-  margin-top: 3%;
+  margin: 1%;
+  padding: 1%;
   resize: none;
 }
 
 .info {
-  margin-top: 2%;
+  margin: 1%;
 }
 
 .keyboard {
   width: 100%;
-  margin-top: 2%;
+  margin: 1%;
+  padding: 1%;
+  border: 1px solid #b4b4b4;
   user-select: none;
 }
 
 .keyboard__row {
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
 .keyboard__key {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   margin: 3px;
   border: 1px solid #b4b4b4;
   border-radius: 5px;
@@ -61,14 +67,18 @@ body {
   outline: none;
 }
 
-.keyboard__key:active {
-  background: rgba(48, 48, 48, 0.3);
+.keyboard__key:hover {
+  background: rgba(48, 48, 48, 0.2);
 }
 
 .keyboard__key_wide {
-  width: 150px;
+  width: 70px;
 }
 
 .keyboard__key_extra-wide {
-  width: 300px;
+  width: 80px;
+}
+
+.keyboard__key_ultra-wide {
+  width: 210px;
 }
