@@ -3,10 +3,8 @@ import keyboardLayout from './keyboardLayout.js';
 
 class Keyboard {
   constructor() {
-    this.properties = {
-      capsLock: false,
-      textValue: '',
-    };
+    this.caps = localStorage.getItem('caps');
+    this.lang = localStorage.getItem('lang') === 'ru' ? 'ru' : 'en';
   }
 
   init() {
@@ -112,7 +110,7 @@ class Keyboard {
         // });
         // }
 
-        keyElement.textContent = key.en;
+        keyElement.textContent = key[this.lang];
         keyboardRow.appendChild(keyElement);
       });
 
