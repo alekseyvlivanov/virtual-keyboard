@@ -29,7 +29,7 @@ class Keyboard {
     this.info.classList.add('info');
     // eslint-disable-next-line operator-linebreak
     this.info.textContent =
-      "To switch ENG/РУС input methods, press 'Alt'+'Shift'.";
+      "To switch ENG/РУС input methods, press 'Ctrl'+'Shift'.";
 
     // Add to DOM
     this.keyboard.appendChild(keyboardFragment);
@@ -49,7 +49,7 @@ class Keyboard {
     document.addEventListener('keydown', (e) => {
       document.getElementById(e.code).classList.add('active');
 
-      if (e.altKey && e.shiftKey) {
+      if (e.ctrlKey && e.shiftKey) {
         this.lang = this.lang === 'ru' ? 'en' : 'ru';
         localStorage.setItem('lang', this.lang);
         this.showLanguage(this.lang);
