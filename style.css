@@ -67,6 +67,11 @@ body {
   transition: all 0.5s;
 }
 
+.keyboard__key.active {
+  background: rgba(48, 48, 48, 0.2);
+  box-shadow: none;
+}
+
 .keyboard__key:active {
   box-shadow: none;
 }

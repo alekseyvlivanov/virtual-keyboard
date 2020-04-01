@@ -47,11 +47,20 @@ class Keyboard {
 
   createListeners() {
     document.addEventListener('keydown', (e) => {
+      document.getElementById(e.code).classList.add('active');
+
       if (e.altKey && e.shiftKey) {
         this.lang = this.lang === 'ru' ? 'en' : 'ru';
         localStorage.setItem('lang', this.lang);
         this.showLanguage(this.lang);
       }
+
+      e.stopPropagation();
+      e.preventDefault();
+    });
+
+    document.addEventListener('keyup', (e) => {
+      document.getElementById(e.code).classList.remove('active');
 
       e.stopPropagation();
       e.preventDefault();
