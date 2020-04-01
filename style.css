@@ -20,8 +20,7 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  max-width: 900px;
-  min-width: 750px;
+  width: 900px;
   margin: 0 auto;
 }
 
@@ -81,9 +80,9 @@ body {
 }
 
 .keyboard__key_extra-wide {
-  width: 80px;
+  width: 100px;
 }
 
 .keyboard__key_ultra-wide {
-  width: 210px;
+  width: 250px;
 }

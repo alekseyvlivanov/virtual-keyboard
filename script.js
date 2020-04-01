@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-import keyboardLayout from './keyboardLayout.js';
+import { keyboardFragment, keyboardKeys } from './keyboardLayout.js';
 
 class Keyboard {
   constructor() {
@@ -32,7 +32,8 @@ class Keyboard {
       "To switch ENG/РУС input methods, press 'Alt'+'Shift'.";
 
     // Add to DOM
-    this.keyboard.appendChild(this.createKeys(keyboardLayout));
+    this.keyboard.appendChild(keyboardFragment);
+    this.showLanguage(this.lang);
 
     this.wrapper.appendChild(this.title);
     this.wrapper.appendChild(this.text);
@@ -40,105 +41,28 @@ class Keyboard {
     this.wrapper.appendChild(this.info);
 
     document.body.appendChild(this.wrapper);
+
+    this.createListeners();
   }
 
-  createKeys(keys) {
-    const fragment = document.createDocumentFragment();
+  createListeners() {
+    document.addEventListener('keydown', (e) => {
+      if (e.altKey && e.shiftKey) {
+        this.lang = this.lang === 'ru' ? 'en' : 'ru';
+        localStorage.setItem('lang', this.lang);
+        this.showLanguage(this.lang);
+      }
 
-    keys.forEach((line) => {
-      const keyboardRow = document.createElement('div');
-      keyboardRow.classList.add('keyboard__row');
-
-      line.forEach((key) => {
-        const keyElement = document.createElement('button');
-
-        // Add attributes/classes
-        keyElement.setAttribute('type', 'button');
-        keyElement.classList.add('keyboard__key');
-        keyElement.classList.add(`keyboard__key_${key.width}`);
-
-        // switch (key) {
-        //   case 'Backspace':
-        //     keyElement.classList.add('keyboard__key_wide');
-
-        // keyElement.addEventListener('click', () => {
-        //   this.properties.value = this.properties.value.slice(0, -1);
-        //   this.triggerEvent('oninput');
-        // });
-
-        // break;
-
-        // case 'CapsLk':
-        //   keyElement.classList.add('keyboard__key_wide');
-
-        // keyElement.addEventListener('click', () => {
-        //   this.toggleCapsLock();
-        //   keyElement.classList.toggle(
-        //     'keyboard__key--active',
-        //     this.properties.capsLock,
-        //   );
-        // });
-
-        // break;
-
-        // case 'Enter':
-        //   keyElement.classList.add('keyboard__key--wide');
-
-        // keyElement.addEventListener('click', () => {
-        //   this.properties.value += '\n';
-        //   this.triggerEvent('oninput');
-        // });
-
-        // break;
-
-        // case 'Space':
-        //   keyElement.classList.add('keyboard__key--extra-wide');
-
-        // keyElement.addEventListener('click', () => {
-        //   this.properties.value += ' ';
-        //   this.triggerEvent('oninput');
-        // });
-
-        // break;
-
-        // default:
-        // keyElement.addEventListener('click', () => {
-        //   this.properties.value += this.properties.capsLock
-        //     ? key.toUpperCase()
-        //     : key.toLowerCase();
-        //   this.triggerEvent('oninput');
-        // });
-        // }
-
-        keyElement.textContent = key[this.lang];
-        keyboardRow.appendChild(keyElement);
-      });
-
-      fragment.appendChild(keyboardRow);
+      e.stopPropagation();
+      e.preventDefault();
     });
-
-    return fragment;
   }
 
-  // triggerEvent(handlerName) {
-  //   if (typeof this.eventHandlers[handlerName] === 'function') {
-  //     this.eventHandlers[handlerName](this.properties.value);
-  //   }
-  // }
-
-  // toggleCapsLock() {
-  //   this.properties.capsLock = !this.properties.capsLock;
-
-  //   this.elements.keys.forEach((key) => {
-  //     if (this.properties.capsLock && key.childElementCount === 0) {
-  //       // eslint-disable-next-line no-param-reassign
-  //       key.textContent = key.textContent.toUpperCase();
-  //     } else if (!this.properties.capsLock && key.childElementCount === 0) {
-  //       // eslint-disable-next-line no-param-reassign
-  //       key.textContent = key.textContent.toLowerCase();
-  //     }
-  //   });
-  // }
+  showLanguage(lang) {
+    this.keyboard.querySelectorAll('.keyboard__key').forEach((e) => {
+      e.textContent = keyboardKeys[e.id][lang];
+    });
+  }
 }
 
 window.addEventListener('DOMContentLoaded', () => {
