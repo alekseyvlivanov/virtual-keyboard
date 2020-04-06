@@ -257,6 +257,8 @@ class Keyboard {
             e.textContent = shiftKey ? '>' : '.';
           } else if (e.id === 'Slash' && this.lang === 'en') {
             e.textContent = shiftKey ? '?' : '/';
+          } else if (e.id === 'Slash' && this.lang === 'ru') {
+            e.textContent = shiftKey ? ',' : '.';
           } else {
             e.textContent = e.textContent[toCase]();
           }
