@@ -1,5 +1,11 @@
 # RSS Виртуальная клавиатура
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0d27e0b7-501f-46d1-a414-bfb8a09829b3/deploy-status)](https://app.netlify.com/sites/virtual-keyboard-chessiah/deploys)
+
+You can see this project in action:
+
+- Netlify - <https://virtual-keyboard.chessiah.com>
+
 ## Задание
 
 #### Вам нужно создать виртуальную клавиатуру наподобие такой:
