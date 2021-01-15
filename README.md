@@ -1,10 +1,10 @@
 # RSS Виртуальная клавиатура
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0d27e0b7-501f-46d1-a414-bfb8a09829b3/deploy-status)](https://app.netlify.com/sites/virtual-keyboard-chessiah/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0d27e0b7-501f-46d1-a414-bfb8a09829b3/deploy-status)](https://app.netlify.com/sites/virtual-keyboard-aleksey-vl-ivanov/deploys)
 
 You can see this project in action:
 
-- Netlify - <https://virtual-keyboard.chessiah.com>
+- Netlify - <https://virtual-keyboard.aleksey-vl-ivanov.com>
 
 ## Задание
 

@@ -1,6 +1,0 @@
-# Netlify redirects
-
-https://virtual-keyboard-chessiah.netlify.app/* https://virtual-keyboard.chessiah.com/:splat 301!
-http://virtual-keyboard-chessiah.netlify.app/* https://virtual-keyboard.chessiah.com/:splat 301!
-
-http://virtual-keyboard.chessiah.com/* https://virtual-keyboard.chessiah.com/:splat 301!
