@@ -1,10 +1,8 @@
 # RSS Виртуальная клавиатура
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0d27e0b7-501f-46d1-a414-bfb8a09829b3/deploy-status)](https://app.netlify.com/sites/virtual-keyboard-aleksey-vl-ivanov/deploys)
-
 You can see this project in action:
 
-- Netlify - <https://virtual-keyboard.aleksey-vl-ivanov.com>
+- Cloudflare - <https://virtual-keyboard.aleksey-vl-ivanov.com>
 
 ## Задание
 
@@ -17,7 +15,7 @@ You can see this project in action:
 - дизайн — на ваше усмотрение
 - изначально файл index.html должен быть пустым (все необходимые элементы генерируются с использованием JS)
 - нажатие на кнопкy физической клавиатуры должно подсвечивать нажатую кнопку на виртуальной:
-  ![](https://i.imgur.com/yU70dGz.png)  
+  ![](https://i.imgur.com/yU70dGz.png)
   **Может быть различия в нажатиях на кнопки клавиатуры для разных операционных систем: windows и Mac OS. Что бы избежать ошибок необходимо на странице с клавиатурой указать в какой OS создавалась клавиатура.**
 - Если нажатие происходит на несколько кнопок, то подсвечиваются все нажатые кнопки (исключений нет и для ctrl-alt-shift):
   ![](https://i.imgur.com/5sg3wmF.png)
